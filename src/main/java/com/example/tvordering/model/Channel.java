@@ -9,23 +9,19 @@ import javax.persistence.*;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "channel")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Customer {
+public class Channel {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @Column(name = "id")
     private Long id;
 
+    private Integer number;
+
     private String name;
-
-    private String address;
-
-    private String email;
-
-    private String phoneNumber;
 
 }

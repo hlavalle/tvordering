@@ -1,10 +1,14 @@
 package com.example.tvordering.service;
 
+import com.example.tvordering.model.Channel;
 import com.example.tvordering.model.Customer;
+
+import java.util.List;
 
 public interface CustomerService {
 
-    public Customer getCustomerById(Long customerId);
+    Customer getCustomerById(Long customerId);
 
+    List<Channel> getCustomerChannelsBySubscribedStatus(Long customerId, boolean subscribed);
 
 }
