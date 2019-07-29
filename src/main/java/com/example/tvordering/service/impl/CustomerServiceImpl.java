@@ -28,6 +28,11 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public List<Customer> getAllCustomers() {
+        return customerRepository.findAll();
+    }
+
+    @Override
     public List<Channel> getCustomerChannelsBySubscribedStatus(Long customerId, boolean subscribed) {
         return customerChannelRepository.findUserChannelsBySubscribedStatus(customerId, subscribed);
     }

@@ -9,6 +9,8 @@ public interface CustomerService {
 
     Customer getCustomerById(Long customerId);
 
+    List<Customer> getAllCustomers();
+
     List<Channel> getCustomerChannelsBySubscribedStatus(Long customerId, boolean subscribed);
 
 }

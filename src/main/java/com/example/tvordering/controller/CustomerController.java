@@ -27,6 +27,14 @@ public class CustomerController {
         return ResponseEntity.ok(customerById);
     }
 
+    @GetMapping()
+    public ResponseEntity<List<Customer>> getAll() {
+
+        List<Customer> allCustomers = customerService.getAllCustomers();
+
+        return ResponseEntity.ok(allCustomers);
+    }
+
     @GetMapping("/{customerId}/channel/{subscribed}")
     public ResponseEntity<List<Channel>> get(
             @PathVariable("customerId") Long customerId,
