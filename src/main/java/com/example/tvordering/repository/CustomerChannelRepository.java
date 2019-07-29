@@ -18,4 +18,9 @@ public interface CustomerChannelRepository extends JpaRepository<CustomerChannel
     List<Channel> findUserChannelsBySubscribedStatus(
             @Param("customerId") Long customerId,
             @Param("subscribed") boolean subscribed);
+
+    @Query("SELECT cc.key.channel FROM CustomerChannel cc" +
+            " WHERE cc.key.customer.id = :customerId")
+    List<Channel> findAllUserChannels(@Param("customerId") Long customerId);
+
 }

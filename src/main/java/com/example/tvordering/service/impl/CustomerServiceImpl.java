@@ -36,4 +36,9 @@ public class CustomerServiceImpl implements CustomerService {
     public List<Channel> getCustomerChannelsBySubscribedStatus(Long customerId, boolean subscribed) {
         return customerChannelRepository.findUserChannelsBySubscribedStatus(customerId, subscribed);
     }
+
+    @Override
+    public List<Channel> getAllCustomerChannels(Long customerId) {
+        return customerChannelRepository.findAllUserChannels(customerId);
+    }
 }
